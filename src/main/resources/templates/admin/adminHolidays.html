@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление праздниками</title>
+    <link rel="stylesheet" href="/css/admin/adminHoliday.css">
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <span id="username">Администратор</span>
+        <nav>
+            <ul>
+                <li><a href="/app/admin/adminUsers" id="users-link">Пользователи</a></li>
+                <li><a href="/app/admin/adminRoles" id="roles-link">Роли</a></li>
+                <li><a href="/app/admin/adminHolidays" id="holidays-link">Праздники</a></li>
+                <li><a href="/app/admin/adminDepartments" id="departments-link">Отделы</a></li>
+                <li><a href="/" id="login-link">Выйти</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Сообщение об ошибке -->
+<div id="error-message" class="hidden">
+    <span id="error-text"></span>
+    <button id="error-close-btn">ОК</button>
+</div>
+
+<main>
+    <section id="holidays">
+        <h2>Список праздников</h2>
+        <table id="holidays-table">
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Дата</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h3>Добавить новый праздник</h3>
+        <form id="add-holiday-form">
+            <input type="text" id="holiday-name" placeholder="Название" required>
+            <input type="text" id="holiday-date" placeholder="Дата (MM-DD)" required pattern="^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$">
+            <button type="submit">Добавить</button>
+        </form>
+    </section>
+</main>
+
+<!-- Модальное окно -->
+<div id="edit-modal" class="hidden">
+    <div class="modal-content">
+        <span id="cancel-btn">&times;</span>
+        <h3>Редактировать праздник</h3>
+        <form id="edit-holiday-form">
+            <input type="hidden" id="edit-holiday-id">
+            <input type="text" id="edit-holiday-name" placeholder="Название" required>
+            <input type="text" id="edit-holiday-date" placeholder="Дата (MM-DD)" required pattern="^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$">
+            <button type="submit" id="save-edit">Сохранить изменения</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/admin/holidaysApi.js"></script>
+<script src="/js/admin/holidays.js"></script>
+</body>
+</html>

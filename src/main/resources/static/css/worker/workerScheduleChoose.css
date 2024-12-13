@@ -1,0 +1,178 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стили для header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 8px 8px;
+}
+
+header .header-content span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #4CAF50;
+}
+
+.header-content nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.header-content nav a.active {
+    color: #f39c12;
+}
+
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.schedule-table {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 20px auto;
+    max-width: 90%;
+}
+
+.schedule-header {
+    font-weight: bold;
+    text-align: center;
+    background: #f5f5f5;
+    padding: 15px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.schedule-row {
+    min-height: 120px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.schedule-item {
+    background: #e8f4fc;
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.schedule-item span {
+    font-size: 16px;
+}
+
+.select-btn, .delete-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.delete-btn {
+    background: #f44336;
+}
+
+.select-btn:hover {
+    background: #45a049;
+}
+
+.delete-btn:hover {
+    background: #c62828;
+}
+
+/* Сообщение о незавершенном расписании */
+#incomplete-message {
+    color: red;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Сообщение об ошибке */
+#error-message {
+    display: none;
+    padding: 15px;
+    margin: 20px 0;
+    border: 1px solid red;
+    background-color: #f8d7da;
+    color: #721c24;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#error-message.visible {
+    display: block;
+}
+
+#error-close-btn {
+    background-color: #721c24;
+    color: white;
+    padding: 8px 15px;
+    margin-left: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#error-close-btn:hover {
+    background-color: #a94442;
+}

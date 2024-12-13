@@ -1,0 +1,148 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стили для header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 8px 8px;
+}
+
+header .header-content span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #4CAF50;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.styled-table th {
+    background: #2196F3;
+    color: white;
+}
+
+.styled-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+button {
+    padding: 8px 12px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button.approve { background: #4CAF50; color: white; }
+button.reject { background: #f44336; color: white; }
+button.stats { background: #2196F3; color: white; }
+
+.stats-box {
+    background: #f7f7f7;
+    padding: 15px;
+    border-left: 4px solid #2196F3;
+    margin-top: 10px;
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.stats-item {
+    font-weight: bold;
+}
+
+.stats-label {
+    color: #555;
+}
+
+/* Сообщение об ошибке */
+#error-message {
+    display: none;
+    padding: 15px;
+    margin: 20px 0;
+    border: 1px solid red;
+    background-color: #f8d7da;
+    color: #721c24;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#error-message.visible {
+    display: block;
+}
+
+#error-close-btn {
+    background-color: #721c24;
+    color: white;
+    padding: 8px 15px;
+    margin-left: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#error-close-btn:hover {
+    background-color: #a94442;
+}

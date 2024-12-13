@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статистика отдела</title>
+    <link rel="stylesheet" href="/css/manager/managerStatistics.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <span id="username" th:text="${user.role.title} +' '+${user.department.name}+' '+ ${user.name}">Начальник отдела</span>
+        <nav>
+            <ul>
+                <li><a href="/app/manager/managerVacations">Заявки на отпуск</a></li>
+                <li><a href="/app/manager/managerDepartmentSchedule">Формирование расписания</a></li>
+                <li><a href="/app/manager/managerStatistics" id="statistics-link">Статистика отдела</a></li>
+                <li><a href="/" id="login-link">Выйти</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+ <!-- Сообщение об ошибке -->
+ <div id="error-message" class="hidden">
+    <span id="error-text"></span>
+    <button id="error-close-btn">ОК</button>
+</div>
+
+
+<main>
+    <h2>Статистика отдела(За 10 дней)</h2>
+
+    <div id="statistic-container">
+        <!-- Число работников -->
+        <div class="stat-item">
+            <h3>Число работников в отделе</h3>
+            <p id="workers-quantity-text"></p>
+        </div>
+
+        <!-- Процент выполнения работы -->
+        <div class="stat-item">
+            <h3>Процент выполнения работы</h3>
+            <p id="work-percent-text"></p>
+            <canvas id="work-percent-chart"></canvas>
+        </div>
+
+        <!-- Опоздание -->
+        <div class="stat-item">
+            <h3>Опоздание (мин.)</h3>
+            <p id="lateness-text"></p>
+            <canvas id="lateness-chart"></canvas>
+        </div>
+
+        <!-- Переработка -->
+        <div class="stat-item">
+            <h3>Переработка (мин.)</h3>
+            <p id="overwork-text"></p>
+            <canvas id="overwork-chart"></canvas>
+        </div>
+
+        <!-- Недоработка -->
+        <div class="stat-item">
+            <h3>Недоработка (мин.)</h3>
+            <p id="underwork-text"></p>
+            <canvas id="underwork-chart"></canvas>
+        </div>
+
+        <!-- Дни в отпуске -->
+        <div class="stat-item">
+            <h3>Дни в отпуске</h3>
+            <p id="vacation-text"></p>
+            <canvas id="vacation-chart"></canvas>
+        </div>
+    </div>
+</main>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/manager/statistics.js"></script>
+</body>
+</html>

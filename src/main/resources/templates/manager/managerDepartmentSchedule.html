@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Формирование расписания</title>
+    <link rel="stylesheet" href="/css/manager/managerSchedule.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <span id="username" th:text="${user.role.title} +' '+${user.department.name}+' '+ ${user.name}">Начальник отдела</span>
+            <nav>
+                <ul>
+                    <li><a href="/app/manager/managerVacations">Заявки на отпуск</a></li>
+                    <li><a href="/app/manager/managerDepartmentSchedule">Формирование расписания</a></li>
+                    <li><a href="/app/manager/managerStatistics" id="statistics-link">Статистика отдела</a></li>
+                    <li><a href="/" id="login-link">Выйти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Сообщение об ошибке -->
+    <div id="error-message" class="hidden">
+        <span id="error-text"></span>
+        <button id="error-close-btn">ОК</button>
+    </div>
+
+    <main>
+        <h1>Формирование расписания</h1>
+    
+        <div id="incomplete-message" class="hidden">Расписание не полное!</div>
+    
+        <div class="schedule-table">
+            <div class="schedule-header">Понедельник</div>
+            <div class="schedule-header">Вторник</div>
+            <div class="schedule-header">Среда</div>
+            <div class="schedule-header">Четверг</div>
+            <div class="schedule-header">Пятница</div>
+            <div class="schedule-header">Суббота</div>
+            <div class="schedule-header">Воскресенье</div>
+        
+            <div id="monday-row" class="schedule-row"></div>
+            <div id="tuesday-row" class="schedule-row"></div>
+            <div id="wednesday-row" class="schedule-row"></div>
+            <div id="thursday-row" class="schedule-row"></div>
+            <div id="friday-row" class="schedule-row"></div>
+            <div id="saturday-row" class="schedule-row"></div>
+            <div id="sunday-row" class="schedule-row"></div>
+        </div>
+        
+    
+        <h2 class="form-title">Добавить новое расписание</h2>
+        <form id="add-schedule-form" class="schedule-form">
+            <div class="form-group">
+                <label for="day-name">День недели:</label>
+                <select id="day-name" required>
+                    <option value="Понедельник">Понедельник</option>
+                    <option value="Вторник">Вторник</option>
+                    <option value="Среда">Среда</option>
+                    <option value="Четверг">Четверг</option>
+                    <option value="Пятница">Пятница</option>
+                    <option value="Суббота">Суббота</option>
+                    <option value="Воскресенье">Воскресенье</option>
+                </select>
+            </div>
+    
+            <div class="form-group">
+                <label for="start-time">Начало:</label>
+                <input type="time" id="start-time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="end-time">Конец:</label>
+                <input type="time" id="end-time" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Добавить расписание</button>
+        </form>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>    
+    <script src="/js/manager/managerScheduleApi.js"></script>
+    <script src="/js/manager/managerSchedule.js"></script>
+</body>
+</html>

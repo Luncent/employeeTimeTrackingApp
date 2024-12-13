@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запросы на отпуск</title>
+    <link rel="stylesheet" href="/css/worker/workerVacations.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <span id="username" th:text="${user.role.title} +' '+${user.department.name} +' '+ ${user.name}">Работник</span>
+            <nav>
+                <ul>
+                    <li><a th:href="@{/app/worker/workerWork}">Рабочий процесс</a></li>
+                    <li><a th:href="@{/app/worker/workerVacations}">Отпуск</a></li>
+                    <li><a th:href="@{/app/worker/workerScheduleChoose}" id="statistics-link">Выбор расписания</a></li>
+                    <li><a th:href="@{/app/worker/workerSchedule}" id="workerSchedule-link">Расписание</a></li>
+                    <li><a th:href="@{/}" id="login-link">Выйти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Сообщение об ошибке -->
+    <div id="error-message" class="hidden">
+        <span id="error-text"></span>
+        <button id="error-close-btn">ОК</button>
+    </div>
+
+    <main>
+        <h1>Запросы на отпуск</h1>
+        <section id="vacations-list">
+            <h2>Список отпусков</h2>
+            <div id="vacations-container"></div>
+        </section>
+        <section id="add-vacation">
+            <h2>Запрос на отпуск</h2>
+            <form id="vacation-form">
+                <label for="start">Дата начала:</label>
+                <input type="date" id="start" name="start" required>
+                <label for="end">Дата окончания:</label>
+                <input type="date" id="end" name="end" required>
+                <button type="submit">Создать запрос</button>
+            </form>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>    
+    <script src="/js/worker/workerVacations.js"></script>
+</body>
+</html>

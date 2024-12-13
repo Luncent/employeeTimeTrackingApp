@@ -1,0 +1,208 @@
+/* Общие стили */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    color: #222;
+    text-align: center;
+}
+
+/* Стили для header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 8px 8px;
+}
+
+header .header-content span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #4CAF50;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+form {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+form input, form button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    grid-column: span 2;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Сообщение об ошибке */
+#error-message {
+    display: none;
+    padding: 15px;
+    margin: 20px 0;
+    border: 1px solid red;
+    background-color: #f8d7da;
+    color: #721c24;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#error-message.visible {
+    display: block;
+}
+
+#error-close-btn {
+    background-color: #721c24;
+    color: white;
+    padding: 8px 15px;
+    margin-left: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#error-close-btn:hover {
+    background-color: #a94442;
+}
+
+/* Кнопки удаления и редактирования */
+.delete-btn {
+    background-color: #e74c3c; 
+    color: white;              
+    border: none;             
+    padding: 10px 20px;       
+    font-size: 16px;          
+    border-radius: 5px;       
+    cursor: pointer;         
+    transition: all 0.3s ease; 
+}
+
+.delete-btn:hover {
+    background-color: #c0392b; 
+}
+
+.delete-btn:active {
+    background-color: #a93226; 
+}
+
+.delete-btn:focus {
+    outline: none; 
+}
+
+.edit-btn {
+    background-color: #bdc3c7; 
+    color: #2c3e50;            
+    border: none;              
+    padding: 10px 20px;        
+    font-size: 16px;           
+    border-radius: 5px;       
+    cursor: pointer;           
+    transition: all 0.3s ease; 
+}
+
+.edit-btn:hover {
+    background-color: #95a5a6; 
+}
+
+.edit-btn:active {
+    background-color: #7f8c8d;
+}
+
+.edit-btn:focus {
+    outline: none; 
+}
+
+/* Модальное окно */
+#edit-modal.hidden {
+    display: none;
+}
+
+#edit-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#edit-modal .modal-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#cancel-btn {
+    align-self: flex-end;
+    font-size: 20px;
+    cursor: pointer;
+}

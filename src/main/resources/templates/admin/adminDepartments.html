@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление отделами</title>
+    <link rel="stylesheet" href="/css/admin/adminDepartment.css">
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <span id="username">Администратор</span>
+        <nav>
+            <ul>
+                <li><a href="/app/admin/adminUsers" id="users-link">Пользователи</a></li>
+                <li><a href="/app/admin/adminRoles" id="roles-link">Роли</a></li>
+                <li><a href="/app/admin/adminHolidays" id="holidays-link">Праздники</a></li>
+                <li><a href="/app/admin/adminDepartments" id="departments-link">Отделы</a></li>
+                <li><a href="/" id="login-link">Выйти</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+ <!-- Сообщение об ошибке -->
+ <div id="error-message" class="hidden">
+    <span id="error-text"></span>
+    <button id="error-close-btn">ОК</button>
+</div>
+
+<main>
+    <section id="departments">
+        <h2>Список отделов</h2>
+        <table id="departments-table">
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h3>Добавить новый отдел</h3>
+        <form id="add-department-form">
+            <input type="text" id="department-name" placeholder="Название" required>
+            <button type="submit">Добавить</button>
+        </form>
+    </section>
+</main>
+
+<!-- Модальное окно для редактирования -->
+<div id="edit-modal" class="hidden">
+    <div class="modal-content">
+        <span id="cancel-btn">&times;</span>
+        <h3>Редактировать отдел</h3>
+        <form id="edit-department-form">
+            <input type="hidden" id="edit-department-id">
+            <input type="text" id="edit-department-name" placeholder="Название" required>
+            <button type="submit" id="save-edit">Сохранить изменения</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/admin/departmentsApi.js"></script>
+<script src="/js/admin/departments.js"></script>
+
+</body>
+</html>
